@@ -14,7 +14,7 @@ function pickComputerMove() {
 }
 
 function playGame(playerMove) {
-  /// calling the function to get the computer's move
+  /// calling the function to get the computer's move and var
   const computerMove = pickComputerMove();
 
   let result = "";
