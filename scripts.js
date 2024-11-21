@@ -1,11 +1,8 @@
-const rock = document.querySelector(".rock");
-const paper = document.querySelector(".paper");
-const scissors = document.querySelector(".scissors");
-
-rock.onclick = () => {
+function pickComputerMove() {
   const randomNumber = Math.random();
-  // computer making its random choice
+
   let computerMove = "";
+  // computer making its random choice
   if (randomNumber >= 0 && randomNumber < 1 / 3) {
     computerMove = "rock";
   } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
@@ -13,69 +10,51 @@ rock.onclick = () => {
   } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
     computerMove = "scissors";
   }
+  return computerMove;
+}
+
+function playGame(playerMove) {
+  /// calling the function to get the computer's move
+  const computerMove = pickComputerMove();
 
   let result = "";
-  // comparing the button clicked with the computer's choice
-  if (computerMove === "rock") {
-    result = "Tie!";
-  } else if (computerMove === "paper") {
-    result = "You lose!";
-  } else if (computerMove === "scissors") {
-    result = "You win!";
-  }
 
+  if (playerMove === "rock") {
+    if (computerMove === "rock") {
+      result = "Tie!";
+    } else if (computerMove === "paper") {
+      result = "You lose!";
+    } else if (computerMove === "scissors") {
+      result = "You win!";
+    }
+  } else if (playerMove === "paper") {
+    if (computerMove === "rock") {
+      result = "You win!";
+    } else if (computerMove === "paper") {
+      result = "Tie!";
+    } else if (computerMove === "scissors") {
+      result = "You lose!";
+    }
+  } else if (playerMove === "scissors") {
+    if (computerMove === "rock") {
+      result = "You lose!";
+    } else if (computerMove === "paper") {
+      result = "You win!";
+    } else if (computerMove === "scissors") {
+      result = "Tie!";
+    }
+  }
   // displaying the result in an alert box
-  alert(`You picked rock. Computer picked ${computerMove}. ${result}`);
-};
+  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+}
 
-paper.onclick = () => {
-  const randomNumber = Math.random();
-  // computer making its random choice
-  let computerMove = "";
-  if (randomNumber >= 0 && randomNumber < 1 / 3) {
-    computerMove = "rock";
-  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    computerMove = "paper";
-  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    computerMove = "scissors";
-  }
-
-  let result = "";
-  // comparing the button clicked with the computer's choice
-  if (computerMove === "rock") {
-    result = "You win!";
-  } else if (computerMove === "paper") {
-    result = "Tie!";
-  } else if (computerMove === "scissors") {
-    result = "You lose!";
-  }
-
-  // displaying the result in an alert box
-  alert(`You picked paper. Computer picked ${computerMove}. ${result}`);
-};
-
-scissors.onclick = () => {
-  const randomNumber = Math.random();
-  // computer making its random choice
-  let computerMove = "";
-  if (randomNumber >= 0 && randomNumber < 1 / 3) {
-    computerMove = "rock";
-  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    computerMove = "paper";
-  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    computerMove = "scissors";
-  }
-
-  let result = "";
-  // comparing the button clicked with the computer's choice
-  if (computerMove === "rock") {
-    result = "You lose!";
-  } else if (computerMove === "paper") {
-    result = "You win!";
-  } else if (computerMove === "scissors") {
-    result = "Tie!";
-  }
-
-  // displaying the result in an alert box
-  alert(`You picked scissors. Computer picked ${computerMove}. ${result}`);
-};
+// using event listeners
+document
+  .querySelector(".rock")
+  .addEventListener("click", () => playGame("rock"));
+document
+  .querySelector(".paper")
+  .addEventListener("click", () => playGame("paper"));
+document
+  .querySelector(".scissors")
+  .addEventListener("click", () => playGame("scissors"));
