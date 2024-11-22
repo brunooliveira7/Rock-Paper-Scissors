@@ -1,3 +1,10 @@
+// object for the score
+const score = {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
+
 function pickComputerMove() {
   const randomNumber = Math.random();
 
@@ -44,17 +51,39 @@ function playGame(playerMove) {
       result = "Tie!";
     }
   }
-  // displaying the result in an alert box
-  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+
+  // updating the score
+  if (result === "You win!") {
+    score.wins += 1;
+  } else if (result === "You lose!") {
+    score.losses += 1;
+  } else if (result === "Tie!") {
+    score.ties += 1;
+  }
+
+  // displaying the result and score in an alert box
+  alert(
+    `You picked ${playerMove}. Computer picked ${computerMove}. ${result} 
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
+  );
 }
 
 // using event listeners
 document
   .querySelector(".rock")
   .addEventListener("click", () => playGame("rock"));
+
 document
   .querySelector(".paper")
   .addEventListener("click", () => playGame("paper"));
+
 document
   .querySelector(".scissors")
   .addEventListener("click", () => playGame("scissors"));
+
+// reset button
+document.querySelector(".reset").addEventListener("click", () => {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+});
