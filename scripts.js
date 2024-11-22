@@ -68,7 +68,7 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
   );
 }
 
-// using event listeners
+// choice buttons using event listeners
 document
   .querySelector(".rock")
   .addEventListener("click", () => playGame("rock"));
