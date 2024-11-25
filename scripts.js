@@ -1,15 +1,19 @@
 // getting the score from local storage - converting string to js object - second step
-let score = JSON.parse(localStorage.getItem("score"))
+let score = JSON.parse(localStorage.getItem("score")) || {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
 
-// if the score is null, set it to 0
-if (score === null) {
-  score ={
+/* if the score is null(false), set it to 0
+if (!score) {
+  score = {
     wins: 0,
     losses: 0,
-    ties: 0
-  }
+    ties: 0,
+  };
 }
-
+  */
 
 function pickComputerMove() {
   const randomNumber = Math.random();
