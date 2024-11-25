@@ -1,9 +1,15 @@
-// object for the score
-const score = {
-  wins: 0,
-  losses: 0,
-  ties: 0,
-};
+// getting the score from local storage - converting string to js object - second step
+let score = JSON.parse(localStorage.getItem("score"))
+
+// if the score is null, set it to 0
+if (score === null) {
+  score ={
+    wins: 0,
+    losses: 0,
+    ties: 0
+  }
+}
+
 
 function pickComputerMove() {
   const randomNumber = Math.random();
@@ -61,6 +67,10 @@ function playGame(playerMove) {
     score.ties += 1;
   }
 
+  // JSON only accepts strings. setItem() have two parameters - key and value.
+  // saving score to local storage - converting the js object to string - first step
+  localStorage.setItem("score", JSON.stringify(score));
+
   // displaying the result and score in an alert box
   alert(
     `You picked ${playerMove}. Computer picked ${computerMove}. ${result} 
@@ -86,4 +96,5 @@ document.querySelector(".reset").addEventListener("click", () => {
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
+  localStorage.removeItem("score");
 });
