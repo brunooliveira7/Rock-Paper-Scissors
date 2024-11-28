@@ -5,6 +5,8 @@ let score = JSON.parse(localStorage.getItem("score")) || {
   ties: 0,
 };
 
+updateScoreElement();
+
 /* if the score is null(false), set it to 0
 if (!score) {
   score = {
@@ -71,15 +73,23 @@ function playGame(playerMove) {
     score.ties += 1;
   }
 
+  document.querySelector(".js-result").innerHTML = result;
+
+  document.querySelector(
+    ".js-moves"
+  ).innerHTML = `You picked ${playerMove}. Computer picked ${computerMove}.`;
+
+  updateScoreElement();
+
   // JSON only accepts strings. setItem() have two parameters - key and value.
   // saving score to local storage - converting the js object to string - first step
   localStorage.setItem("score", JSON.stringify(score));
+}
 
-  // displaying the result and score in an alert box
-  alert(
-    `You picked ${playerMove}. Computer picked ${computerMove}. ${result} 
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
-  );
+function updateScoreElement() {
+  document.querySelector(
+    ".js-score"
+  ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.`;
 }
 
 // choice buttons using event listeners
@@ -100,5 +110,8 @@ document.querySelector(".reset").addEventListener("click", () => {
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
+  // on click, remove the score from local storage - result null
   localStorage.removeItem("score");
+  // update the score
+  updateScoreElement();
 });
