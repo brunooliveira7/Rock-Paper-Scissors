@@ -77,7 +77,7 @@ function playGame(playerMove) {
 
   document.querySelector(
     ".js-moves"
-  ).innerHTML = `You picked ${playerMove}. Computer picked ${computerMove}.`;
+  ).innerHTML = `You picked ${playerMove} - Computer picked ${computerMove}.`;
 
   updateScoreElement();
 
