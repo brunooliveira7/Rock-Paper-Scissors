@@ -36,7 +36,7 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .move-icon {
@@ -50,4 +50,25 @@ input {
   width: 10rem;
   height: 10rem;
   margin-right: 1rem; 
+}
+
+.result {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.score {
+  margin-top: 5rem;
+}
+
+.reset-score-button{
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
