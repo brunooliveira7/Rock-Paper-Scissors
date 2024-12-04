@@ -12,11 +12,7 @@ DevLinks é uma página com tecnologias WEB de fácil acesso utilizando-se de um
 </p>
 
 <p align="center">
-  <img alt="License" src="https://github.com/brunooliveira7/ProjetoDiscover/blob/main/assets/Dark.jpeg">
-</p>
-
-<p align="center">
-  <img alt="License" src="https://github.com/brunooliveira7/ProjetoDiscover/blob/main/assets/Ligth.jpeg">
+  <img alt="License" src="">
 </p>
 
 <br>
