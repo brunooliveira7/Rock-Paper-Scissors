@@ -1,4 +1,4 @@
-<h1 align="center">  </h1>
+<h1 align="center"> Rock-Paper-Scissors </h1>
 
 <p align="center">
 DevLinks é uma página com tecnologias WEB de fácil acesso utilizando-se de uma lista de botões. Site disponível em: https://brunooliveira7.github.io/Projeto-Discover/
@@ -12,7 +12,7 @@ DevLinks é uma página com tecnologias WEB de fácil acesso utilizando-se de um
 </p>
 
 <p align="center">
-  <img alt="License" src="">
+  <img alt="License" src="https://github.com/brunooliveira7/Rock-Paper-Scissors/blob/main/assets/Layout%20-%20Rock-Paper-Scissors.png">
 </p>
 
 <br>
