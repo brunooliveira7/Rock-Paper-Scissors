@@ -1,7 +1,7 @@
 <h1 align="center"> Rock-Paper-Scissors </h1>
 
 <p align="center">
-DevLinks é uma página com tecnologias WEB de fácil acesso utilizando-se de uma lista de botões. Site disponível em: https://brunooliveira7.github.io/Projeto-Discover/
+Simula o clássico jogo Pedra, Papel e Tesoura. O usuário joga contra o computador, que faz escolhas aleatórias. O placar mantém o registro de vitórias, derrotas e empates, exibido em tempo real. Site disponível em: https://brunooliveira7.github.io/Rock-Paper-Scissors
 </p>
 
 <p align="center">
@@ -27,7 +27,7 @@ Projeto desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O Devlinks é um agregador de links para ser usado como cartão de visitas.
+Com botões para selecionar cada opção e uma visualização do resultado de cada rodada. Ideal para passar o tempo e desafiar amigos para ver quem consegue a maior pontuação!
 
 ## :memo: Licença
 
